@@ -59,11 +59,11 @@
 #endif // _MSC_VER
 
 #ifndef UNIT_LIB_DEFAULT_TYPE
-#define UNIT_LIB_DEFAULT_TYPE double
+#define UNIT_LIB_DEFAULT_TYPE float
 #endif
 
 // Comment out to disable iostream printing support
-#define UNITS_LIB_ENABLE_IOSTREAM
+//#define UNITS_LIB_ENABLE_IOSTREAM
 
 //--------------------
 //	INCLUDES
@@ -78,6 +78,12 @@
 #include <iostream>
 #endif
 #include <limits>
+
+// Following undefs are required because GCC-ARM's ctype.h defines them too
+#undef _C
+#undef _L
+#undef _N
+#undef _S
 
 //------------------------------
 //	MACROS
